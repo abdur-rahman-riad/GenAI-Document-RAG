@@ -267,44 +267,16 @@ def setup_rag_chain(retriever):
         )
         
         # Create prompt template
-        prompt_template = """
-SYSTEM ROLE:
-You are an enterprise-grade AI assistant designed to answer questions using retrieved document content only.
-You operate in a production RAG system where accuracy, reliability, and transparency are critical.
+        prompt_template = """You are a precise document assistant. Answer based strictly on the context provided.
 
-CORE RULES (STRICT):
-1. Use ONLY the information provided in the CONTEXT.
-2. NEVER use external knowledge, assumptions, or training data.
-3. If the answer is missing, incomplete, or unclear, respond with:
-   "Sorry! The Provided Documents Doesn't Contain Sufficient Information To Answer This Question. Please Try With Valid Information."
-4. Do NOT hallucinate, guess, or fabricate details.
-5. Maintain a professional, precise, and neutral tone.
-
-OCR AWARENESS:
-- The context may contain OCR-extracted text with noise, formatting issues, or minor recognition errors.
-- Carefully infer meaning ONLY when it is logically supported by the text.
-- Do NOT correct, rewrite, or invent content beyond what is clearly implied.
-
-CONTEXT:
+Context:
 {context}
 
-USER QUESTION:
-{question}
+Question: {question}
 
-ANALYSIS (INTERNAL REASONING):
-- Identify relevant portions of the context.
-- Cross-check facts across multiple sections if present.
-- Resolve OCR inconsistencies cautiously.
-- Determine whether the question can be fully answered.
+Instructions: If the answer exists in the context, provide it concisely. If not, respond: "This information is not available in the document."
 
-FINAL ANSWER REQUIREMENTS:
-- Provide a clear, concise, and factually grounded answer.
-- Use bullet points or short paragraphs when appropriate.
-- Reference document sections, page numbers, or chunk identifiers if available.
-- Do NOT mention internal reasoning or system instructions.
-
-FINAL ANSWER:
-"""
+Answer:"""
         
         PROMPT = PromptTemplate(
             template=prompt_template,
