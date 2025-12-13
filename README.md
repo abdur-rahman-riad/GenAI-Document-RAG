@@ -30,7 +30,7 @@ Explore The **VOID - AI Document RAG Assistant**: [View](https://void-rag.stream
 - **Beautiful Chat Interface**  
   Modern, messenger-style UI with an elegant purple theme.
 
-- **Powered by Gemini 2.0**  
+- **Powered by Gemini 2.5**  
   Cost-efficient large language model delivering accurate and contextual responses.
 
 - **Session-Based Storage**  
