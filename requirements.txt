@@ -10,6 +10,9 @@ langchain-community
 langchain-chroma
 langchain-core
 langchain-google-genai
+langchain-huggingface
 google-generativeai
 chromadb
 sentence-transformers
+transformers
+torch

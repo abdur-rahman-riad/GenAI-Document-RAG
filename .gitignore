@@ -16,10 +16,6 @@ ENV/
 temp_db_*/
 rag_chroma_db/
 
-# Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb
-
 # OS files
 .DS_Store
 Thumbs.db
