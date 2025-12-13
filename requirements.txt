@@ -1,0 +1,15 @@
+streamlit
+python-dotenv
+pypdf
+pdf2image
+pytesseract
+pillow
+langchain
+langchain-text-splitters
+langchain-community
+langchain-chroma
+langchain-core
+langchain-google-genai
+google-generativeai
+chromadb
+sentence-transformers
